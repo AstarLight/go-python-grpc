@@ -1,0 +1,31 @@
+syntax = "proto3"; // 指定proto版本
+
+// 指定golang包名
+option go_package = "pb/aiservice";
+
+service AiService {
+rpc Predict(PredictRequest) returns (PredictResponse) {}
+}
+
+service GateService {
+rpc Report(ReportRequest) returns (ReportResponse) {}
+}
+
+message PredictRequest {
+  string image = 1; // base64图像
+}
+
+
+message PredictResponse {
+  string result = 1; // 识别后的结果
+}
+
+message ReportRequest {
+  string address = 1;
+  string cpu_load = 2;
+  string mem_load = 3;
+}
+
+message ReportResponse {
+  string status = 1;
+}

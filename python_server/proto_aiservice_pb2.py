@@ -1,0 +1,1 @@
+/mnt/d/code/go-python-grpc/proto/proto_aiservice_pb2.py
